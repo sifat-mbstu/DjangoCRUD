@@ -16,7 +16,9 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 # PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 # STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -27,7 +29,7 @@ SECRET_KEY = 'django-insecure-e*(s%b2c^$k7c09mz%tt2r1)%n7ngrc^-vklv4^z3*np5j232a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','https://employeeappdjango.herokuapp.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
